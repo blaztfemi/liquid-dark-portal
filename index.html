@@ -31,9 +31,10 @@ body{
 ::-webkit-scrollbar-track{background:var(--parchment)}
 ::-webkit-scrollbar-thumb{background:var(--rule);border-radius:2px}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease}
-.rv.v{opacity:1;transform:translateY(0)}
+/* REVEAL — content visible by default, animation is progressive enhancement */
+.rv{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease}
+.rv-ready .rv{opacity:0;transform:translateY(22px)}
+.rv-ready .rv.v{opacity:1;transform:translateY(0)}
 .rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}
 
 /* LAYOUT */
@@ -759,22 +760,19 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- SCRIPTS                                            -->
 <!-- ══════════════════════════════════════════════════ -->
 <script>
-// Scroll Reveal
+// Scroll Reveal — progressive enhancement
+// Content is visible by default. JS opts in to animations, then reveals on scroll.
 (function(){
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('v'); });
-    return;
-  }
+  if (!('IntersectionObserver' in window)) return;
+  // Opt in: hide elements so observer can reveal them
+  document.documentElement.classList.add('rv-ready');
   var ro = new IntersectionObserver(function(es) {
     es.forEach(function(e) {
       if (e.isIntersecting) { e.target.classList.add('v'); ro.unobserve(e.target); }
     });
   }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
-  // Fallback: force hero elements visible immediately
-  setTimeout(function(){
-    document.querySelectorAll('.hero .rv').forEach(function(el){ el.classList.add('v'); });
-  }, 150);
-  // Safety net: if nothing is visible after 2s, force all
-  setTimeout(function(){
-    if (document.querySelectorAll('.
+})();
+
+// Nav
+var nav = document.getElementById('m
