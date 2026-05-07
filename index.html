@@ -760,21 +760,21 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <script>
 // Scroll Reveal
-var ro = new IntersectionObserver(function(es) {
-  es.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('v'); ro.unobserve(e.target); } });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
-
-// Nav
-var nav = document.getElementById('mainNav');
-var hh = window.innerHeight * 0.7;
-window.addEventListener('scroll', function() {
-  nav.classList.toggle('v', window.scrollY > hh);
-}, { passive: true });
-
-// Smooth scroll
-document.querySelectorAll('.nav-l a').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    var t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('v'); });
+    return;
+  }
+  var ro = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('v'); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
+  // Fallback: force hero elements visible immediately
+  setTimeout(function(){
+    document.querySelectorAll('.hero .rv').forEach(function(el){ el.classList.add('v'); });
+  }, 150);
+  // Safety net: if nothing is visible after 2s, force all
+  setTimeout(function(){
+    if (document.querySelectorAll('.
