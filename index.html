@@ -180,6 +180,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 .td-tag{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;display:inline-block}
 .td-open{color:var(--sienna);background:rgba(181,84,27,0.08)}
 .td-red{color:var(--deep-red);background:rgba(139,58,58,0.08)}
+.td-done{color:#5C6B5A;background:rgba(92,107,90,0.12)}
 
 /* PROTOCOL */
 .proto{margin-top:40px;padding:36px 40px;background:var(--parchment);border-left:3px solid var(--sienna)}
@@ -212,6 +213,16 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 .mu{margin-top:16px;font-family:var(--font-ui);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,0.3);display:flex;align-items:center;gap:8px}
 .mu::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sienna)}
 
+/* FEASIBILITY PANEL */
+.pf-panel{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px}
+@media(min-width:820px){.pf-panel{grid-template-columns:1fr 1fr;gap:32px}}
+.pf-col{padding:28px;border:1px solid rgba(245,240,232,0.1)}
+.pf-col-title{font-family:var(--font-display);font-size:clamp(18px,2vw,22px);font-weight:500;font-style:italic;color:var(--parchment);margin-bottom:16px}
+.pf-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid rgba(245,240,232,0.06);font-family:var(--font-body);font-size:14px;color:rgba(245,240,232,0.7);line-height:1.5}
+.pf-row:last-child{border-bottom:none}
+.pf-row strong{font-weight:600;color:var(--parchment)}
+.pf-status{font-family:var(--font-ui);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sienna);margin-top:8px;display:inline-block}
+
 
 </style>
 </head>
@@ -226,6 +237,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
     <div class="nav-b">Liquid Dark / 1271 S Shelby</div>
     <ul class="nav-l">
       <li><a href="#ground">Site</a></li>
+      <li><a href="#feasibility">Feasibility</a></li>
       <li><a href="#intel">Intel</a></li>
       <li><a href="#precedents">Proof</a></li>
       <li><a href="#terrain">Terrain</a></li>
@@ -244,12 +256,12 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
   <div class="hero-c">
     <div class="hero-phase rv"><span>Phase: Pre-Development Intelligence</span></div>
     <h1 class="rv rv-d1">1271 South Shelby<br><em>at Goss Avenue</em></h1>
-    <p class="rv rv-d2" style="font-family:var(--font-body);font-size:clamp(15px,1.8vw,18px);color:rgba(245,240,232,0.55);font-style:italic;line-height:1.6;max-width:600px;margin-bottom:0;">A 135-year-old industrial corner on a streetcar suburb's edge. Three people. One building. An idea that either becomes the best thing on this corridor or doesn't happen at all. This portal is the shared brain.</p>
+    <p class="rv rv-d2" style="font-family:var(--font-body);font-size:clamp(15px,1.8vw,18px);color:rgba(245,240,232,0.55);font-style:italic;line-height:1.6;max-width:600px;margin-bottom:0;">Three parcels. One historic building. One vacant lot. An idea that either becomes the best thing on this corridor or doesn&rsquo;t happen at all. The two-way street conversion is being poured outside right now. This portal is the shared brain.</p>
     <div style="height:1px;background:rgba(245,240,232,0.08);margin-top:36px"></div>
     <div class="hero-meta rv rv-d3">
       <div class="hm-i">
         <span class="hm-l">Address</span>
-        <span class="hm-v">1271 S Shelby St, Louisville KY 40203</span>
+        <span class="hm-v">1267 / 1269 / 1271 S. Shelby St, Louisville KY 40203</span>
       </div>
       <div class="hm-i">
         <span class="hm-l">Neighborhood</span>
@@ -277,8 +289,8 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <section class="bg-alt" id="ground">
   <div class="c">
     <div class="sl rv"><span>01 &mdash; The Ground</span></div>
-    <h2 class="st rv rv-d1">Corner of Shelby and Goss</h2>
-    <p class="ss rv rv-d2">Two-street frontage on a corner that's about to change. The $3M two-way street conversion is being poured right now between Goss and East Gray. When that concrete dries, this intersection becomes a neighborhood node instead of a one-way pass-through.</p>
+    <h2 class="st rv rv-d1">Three Parcels at Shelby and Goss</h2>
+    <p class="ss rv rv-d2">Three addresses on a corner that&rsquo;s about to change. The $3M two-way street conversion is being poured right now between Goss and East Gray. When that concrete dries, this intersection becomes a neighborhood node instead of a one-way pass-through. The combined site &mdash; 1267, 1269, and 1271 &mdash; opens possibilities a single parcel never could.</p>
     <div class="dv rv rv-d2"></div>
 
     <div class="grid-2">
@@ -293,7 +305,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
           <div class="stat-n">4,922</div>
           <div class="stat-r"></div>
           <div class="stat-l">Square Feet of Lot</div>
-          <div class="stat-s">0.11 acres. Tight. Urban. Every inch matters.</div>
+          <div class="stat-s">1271 parcel alone. Three parcels combined TBD via LOJIC.</div>
         </div>
         <div class="stat rv rv-d2" style="margin-top:28px">
           <div class="stat-n">1890</div>
@@ -305,7 +317,13 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
           <div class="stat-n">93%</div>
           <div class="stat-r"></div>
           <div class="stat-l">Lot Coverage</div>
-          <div class="stat-s">Building fills the parcel. This is a rehab play, not a ground-up.</div>
+          <div class="stat-s">1271 building fills its parcel. But the 1267 lot opens vertical new construction.</div>
+        </div>
+        <div class="stat rv rv-d4" style="margin-top:28px">
+          <div class="stat-n">1267</div>
+          <div class="stat-r"></div>
+          <div class="stat-l">Vacant Buildable Lot</div>
+          <div class="stat-s">Adjacent parcel. New construction opportunity. Confirmed by MK Lindsey, May 10, 2026.</div>
         </div>
       </div>
     </div>
@@ -329,11 +347,75 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 </section>
 
 <!-- ══════════════════════════════════════════════════ -->
+<!-- FEASIBILITY                                        -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="bg-dark" id="feasibility">
+  <div class="c">
+    <div class="sl rv"><span>02 &mdash; The Numbers</span></div>
+    <h2 class="st rv rv-d1">Working Pro Forma</h2>
+    <p class="ss rv rv-d2">MK Lindsey delivered a straight-market pro forma on May 10, 2026. No credits, no incentives, just market. Six AirBnB rooms upstairs, ground-floor commercial. The numbers work without the HTC stack. With it, they sing.</p>
+    <div class="dv rv rv-d2"></div>
+
+    <div class="grid-3">
+      <div class="stat rv rv-d1">
+        <div class="stat-n">$4.74M</div>
+        <div class="stat-r"></div>
+        <div class="stat-l">Total Project Budget</div>
+        <div class="stat-s">70% hard costs. 5% developer fee. 7% contingency.</div>
+      </div>
+      <div class="stat rv rv-d2">
+        <div class="stat-n">1.36x</div>
+        <div class="stat-r"></div>
+        <div class="stat-l">Stabilized DSCR</div>
+        <div class="stat-s">$2.85M primary mortgage at 7%, 25-year am.</div>
+      </div>
+      <div class="stat rv rv-d3">
+        <div class="stat-n">14.2%</div>
+        <div class="stat-r"></div>
+        <div class="stat-l">LP XIRR</div>
+        <div class="stat-s">3.01x equity multiple. 85/15 split. 8% preferred return.</div>
+      </div>
+    </div>
+
+    <div class="pf-panel rv rv-d3">
+      <div class="pf-col">
+        <div class="pf-col-title">Market Scenario</div>
+        <div class="pf-row">6 AirBnB Rooms <strong>$230 ADR / 83% Occ</strong></div>
+        <div class="pf-row">Suite 1 <strong>3,500 SF @ $18/SF</strong></div>
+        <div class="pf-row">Warehouse / Garage <strong>2,100 SF @ $7/SF</strong></div>
+        <div class="pf-row">Retail Market <strong>2,000 SF @ $18/SF</strong></div>
+        <div class="pf-row">LP Equity <strong>$1,350,000</strong></div>
+        <div class="pf-row">GP Equity <strong>$285,000</strong></div>
+        <div class="pf-row">Primary Mortgage <strong>$2,850,000</strong></div>
+      </div>
+      <div class="pf-col">
+        <div class="pf-col-title">HTC Scenario (if Contributing)</div>
+        <div class="pf-row">Federal HTC <strong>20% of QREs</strong></div>
+        <div class="pf-row">Kentucky HTC <strong>20% of QREs</strong></div>
+        <div class="pf-row">Combined <strong>40% credit stack</strong></div>
+        <div class="pf-row">Estimated HTC equity <strong>~$490K&ndash;$600K on $1.5M QREs</strong></div>
+        <div class="pf-row">Reduces equity raise <strong>~27% of total project cost</strong></div>
+        <div class="pf-status">Status: Pending KHC contributing determination</div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px" class="rv rv-d4">
+      <a href="https://drive.google.com/drive/folders/1mmy30UqgCBfmOKQkVwu2k-SumVQg5jbn" target="_blank" class="scout-cta" style="background:transparent;border:1px solid rgba(181,84,27,0.4)">Open Working Pro Forma <span class="arr">&rarr;</span></a>
+    </div>
+
+    <div class="qp rv rv-d4" style="background:rgba(245,240,232,0.05);border-top-color:var(--sienna)">
+      <div class="qp-label" style="color:rgba(245,240,232,0.4)">Question for MK</div>
+      <div class="qp-q" style="color:rgba(245,240,232,0.7)">Can any incentive grants or loans be layered into the stack to reduce the equity requirement? What does the deal look like if we add residential density on the 1267 lot?</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
 <!-- INTELLIGENCE BOARD                                 -->
 <!-- ══════════════════════════════════════════════════ -->
 <section id="intel">
   <div class="c">
-    <div class="sl rv"><span>02 &mdash; The Intelligence</span></div>
+    <div class="sl rv"><span>03 &mdash; The Intelligence</span></div>
     <h2 class="st rv rv-d1">Four Scouts, One Picture</h2>
     <p class="ss rv rv-d2">Every section below is a living Google Doc shared with the whole team. Read. Comment. Add what you know. Push back where we're wrong. This isn't a report you file. It's a conversation you join.</p>
     <div class="dv rv rv-d2"></div>
@@ -349,8 +431,8 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
       </div>
       <div class="scout-body">
         <p>The parcel belongs to the Weiter family. Carol Weiter, individual ownership, $0 last sale amount in the public record. That combination tells a story: family-held for a very long time, never professionally marketed, pricing set by emotion not market. Multiple price drops and an individual owner on the other side of the table. You're talking to a person, not a team.</p>
-        <p>The building covers 93% of the lot. <strong>4,564 square feet of floor area on 4,922 square feet of land.</strong> There is essentially zero undeveloped ground. Whatever this becomes, it lives inside the existing envelope or it goes vertical. At this footprint, practical uses run the range: boutique hotel (8-12 rooms), creative office/studio, food and beverage with event space, live/work. A 60-room hotel does not work here. A 20,000 SF office does not work here. The program must fit the box.</p>
-        <p>Shelby Park became a <strong>National Register Historic District in 2024.</strong> The building is almost certainly a contributing resource, which unlocks historic tax credits. But that assumption needs confirmation. More on that in the Regulatory Scout, where the news gets complicated.</p>
+        <p>The listing covers three addresses: 1267, 1269, and 1271 S. Shelby. The 1271 building covers 93% of its lot. <strong>4,564 square feet of floor area on 4,922 square feet of land.</strong> But 1267 is a vacant buildable lot, confirmed by MK Lindsey on May 10, 2026. That changes everything. The combined site supports both adaptive reuse of the historic building AND new vertical construction. The program options expand materially beyond a single-building rehab.</p>
+        <p>Shelby Park became a <strong>National Register Historic District in 2024.</strong> But the building&rsquo;s contributing status is the single most important open question. The Regulatory Scout found every neighbor on this block coded non-contributing. The team should assume NC until KHC says otherwise. MK Lindsey notes that each building is evaluated individually, not as a block. If contributing, historic tax credits open up. If not, the Allison Cleaners appeal pathway is on the table.</p>
         <p><em>Red flags: Phase I ESA is mandatory on 135 years of industrial use. Building condition is unknown until site visit. Foundation, roof, structural masonry, MEP systems all need eyes. Assume full gut rehab until proven otherwise.</em></p>
       </div>
       <a href="https://docs.google.com/document/d/1aBzrFFvTAUJDqpvrSDHN9AM4MKlODG7CaTv-7k8-ylk/edit" target="_blank" class="scout-cta">Read the Full Site Scout <span class="arr">&rarr;</span></a>
@@ -367,16 +449,17 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
       </div>
       <div class="scout-body">
         <p><strong>Here's the bombshell.</strong> The Site Scout assumed the building is a contributing resource in the historic district. The Regulatory Scout found that every single neighbor on this block is coded non-contributing in the National Register inventory. 1244, 1247, 1252, 1258, 1262 S Shelby. All NC. The surveyors flagged this entire stretch as having lost integrity through alterations. 1271 is almost certainly non-contributing too. If that holds, the entire HTC stack collapses.</p>
+        <p><strong>MK&rsquo;s correction (May 10, 2026):</strong> Adjacent non-contributing status does not automatically disqualify 1271. Each building in the inventory is evaluated on its own integrity. The NC coding of neighboring properties reflects their specific alterations, not a block-wide disqualification. 1271 must receive its own direct evaluation from KHC. The HTC stack remains live until that determination comes back.</p>
         <p>But there's a documented appeal pathway, and it has been used successfully <strong>on this exact corridor.</strong> Allison Cleaners at 1133 S. Shelby was denied contributing status in February 2024. The owner removed a non-historic brick veneer and Mansard roof, revealed the original facade underneath, and won the appeal in June 2024. NPS reversed the determination. That is the playbook for 1271.</p>
         <p>The other correction: <strong>Kentucky's commercial historic credit is 20%, not 30%.</strong> The 30% is owner-occupied residential only, capped at $120K. Combined federal plus state on a commercial project is 40%, not the 50% we first assumed. At $1.5M of qualified rehab expenditures, that's still roughly $490K in equity. But the $150K difference matters.</p>
-        <p><em>The single most important email MK sends this month is to Katie Wilborn at KHC (katherine.wilborn@ky.gov) asking for the contributing/non-contributing determination on 1271. Nothing else moves until that answer comes back.</em></p>
+        <p><em>MK is preparing the KHC email to Katie Wilborn as of May 10, 2026. The corrected pro forma (Market Scenario) is delivered. Next up: run the HTC scenario with the 20/20 stack and model the 1267 lot density play.</em></p>
       </div>
       <a href="https://docs.google.com/document/d/1lNUymO3gAl5zTn03BFcIgwaW7cPAa1q_03gUfQzeCWs/edit" target="_blank" class="scout-cta">Read the Full Regulatory Scout <span class="arr">&rarr;</span></a>
     </div>
 
     <div class="qp rv">
       <div class="qp-label">Question for MK</div>
-      <div class="qp-q">Have you emailed Katie Wilborn yet? And have you run the corrected 20/20 stack against a rough pro forma? Those two things unblock everything else.</div>
+      <div class="qp-q">MK is preparing the KHC email to Katie Wilborn as of May 10, 2026. The corrected pro forma (Market Scenario) is delivered. Next up: run the HTC scenario with the 20/20 stack and model the 1267 lot density play.</div>
       <a href="mailto:ericwhitmore@gmail.com?subject=Liquid Dark - Regulatory Question" class="qp-link">Reply to Eric <span>&rarr;</span></a>
     </div>
   </div>
@@ -387,7 +470,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section class="bg-alt" id="precedents">
   <div class="c">
-    <div class="sl rv"><span>03 &mdash; The Proof</span></div>
+    <div class="sl rv"><span>04 &mdash; The Proof</span></div>
     <h2 class="st rv rv-d1">Built Evidence</h2>
     <p class="ss rv rv-d2">These aren't aspirational mood boards. These are real projects, in this market, that either prove the model works or show exactly where it breaks. Every precedent is argued, not just listed.</p>
     <div class="dv rv rv-d2"></div>
@@ -515,7 +598,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section id="terrain">
   <div class="c">
-    <div class="sl rv"><span>04 &mdash; The Terrain</span></div>
+    <div class="sl rv"><span>05 &mdash; The Terrain</span></div>
     <h2 class="st rv rv-d1">Political Landscape</h2>
     <p class="ss rv rv-d2">The councilperson is a Democratic Socialist. The neighborhood association president is a social worker who voted against the last big development on this block. The dominant impact-investment force operates out of an evangelical worldview that progressive locals view as gentrification with a paint job. Done right, this project lands. Done wrong, it becomes a cautionary tale.</p>
     <div class="dv rv rv-d2"></div>
@@ -586,7 +669,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section class="bg-alt" id="team">
   <div class="c">
-    <div class="sl rv"><span>05 &mdash; The Team</span></div>
+    <div class="sl rv"><span>06 &mdash; The Team</span></div>
     <h2 class="st rv rv-d1">Three Lanes</h2>
     <p class="ss rv rv-d2">Each lane owns a thread. Each thread feeds the plan. If your lane isn't moving, the whole board feels it.</p>
     <div class="dv rv rv-d2"></div>
@@ -604,7 +687,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
         <div class="tm-name">MK Lindsey</div>
         <div class="tm-org"><a href="https://winterwheat.us" target="_blank">Winter Wheat</a></div>
         <div class="tm-fl">Current Focus</div>
-        <div class="tm-fb">HTC stack validation. KHC contact. Pro forma with corrected 20/20 credit assumptions. Unit mix scenario modeling. $130M+ in gap funding secured across Kentucky and Ohio. She's done this exact deal before.</div>
+        <div class="tm-fb">Working pro forma delivered (Market Scenario, May 10). KHC contributing-status inquiry in draft. HTC scenario modeling with corrected 20/20 stack. 1267 lot density analysis. $130M+ in gap funding secured across Kentucky and Ohio. She&rsquo;s done this exact deal before.</div>
       </div>
       <div class="tm rv rv-d3">
         <div class="tm-role">Historian</div>
@@ -622,7 +705,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section id="questions">
   <div class="c">
-    <div class="sl rv"><span>06 &mdash; Open Questions</span></div>
+    <div class="sl rv"><span>07 &mdash; Open Questions</span></div>
     <h2 class="st rv rv-d1">What's Unresolved</h2>
     <p class="ss rv rv-d2">Every open question that needs an answer before this moves forward. If you can answer one, do it. If you can add one, send it.</p>
     <div class="dv rv rv-d2"></div>
@@ -652,9 +735,9 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
           <td><span class="td-tag td-open">Open</span></td>
         </tr>
         <tr>
-          <td>Run corrected pro forma with 20/20 credit stack (not 30/20)</td>
+          <td>Run corrected pro forma with 20/20 credit stack (not 30/20). <em>Market Scenario delivered May 10, 2026. HTC Scenario next.</em></td>
           <td>MK</td>
-          <td><span class="td-tag td-open">Open</span></td>
+          <td><span class="td-tag td-done">Delivered</span></td>
         </tr>
         <tr>
           <td>If NC status confirmed: get preservation consultant's opinion on Allison Cleaners appeal path ($3-5K)</td>
@@ -681,6 +764,16 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
           <td>All</td>
           <td><span class="td-tag td-open">Open</span></td>
         </tr>
+        <tr>
+          <td>Confirm parcel boundaries and dimensions for all three addresses (1267, 1269, 1271) via LOJIC. Confirm all three are under same ownership.</td>
+          <td>Eric</td>
+          <td><span class="td-tag td-open">Open</span></td>
+        </tr>
+        <tr>
+          <td>Model residential/live-work density on 1267 vacant lot</td>
+          <td>MK</td>
+          <td><span class="td-tag td-open">Open</span></td>
+        </tr>
       </tbody>
     </table>
 
@@ -697,7 +790,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section class="bg-alt" id="protocol">
   <div class="c">
-    <div class="sl rv"><span>07 &mdash; Intel Feed Protocol</span></div>
+    <div class="sl rv"><span>08 &mdash; Intel Feed Protocol</span></div>
     <h2 class="st rv rv-d1">How to Feed the Brain</h2>
     <p class="ss rv rv-d2">Every piece of intelligence enters the system the same way. Self-addressed email. Subject line tells the system where it goes. Body carries the payload. One email per finding. Don't bundle.</p>
     <div class="dv rv rv-d2"></div>
@@ -728,7 +821,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- ══════════════════════════════════════════════════ -->
 <section class="bg-dark" id="drive">
   <div class="c">
-    <div class="sl rv"><span>08 &mdash; Shared Drive + Site Photography</span></div>
+    <div class="sl rv"><span>09 &mdash; Shared Drive + Site Photography</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px">
       <a href="https://drive.google.com/drive/folders/1mmy30UqgCBfmOKQkVwu2k-SumVQg5jbn" target="_blank" class="scout-cta rv" style="background:transparent;border:1px solid rgba(181,84,27,0.4)">Open Project Drive Folder <span class="arr">&rarr;</span></a>
       <a href="https://app.sketchup.com/share/tc/northAmerica/tIzovCnaJSw?source=desktop&stoken=RVCXVqfvK-o85Bf_y2Y5KemD309cBqPLVwsodCgneA36yEmJt7RLyDAWqgLWDxQT" target="_blank" class="scout-cta rv" style="background:transparent;border:1px solid rgba(181,84,27,0.4)">Open 3D Model <span class="arr">&rarr;</span></a>
@@ -749,7 +842,7 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
 <!-- FOOTER -->
 <div class="foot">
   <div class="c">
-    <p>Square One Intelligence Portal / Liquid Dark / 1271 S Shelby St / 2026</p>
+    <p>Square One Intelligence Portal / Liquid Dark / 1271 S Shelby St / Updated May 10, 2026</p>
     <p style="margin-top:8px;opacity:.6">
       <a href="https://winterwheat.us" target="_blank" style="color:rgba(245,240,232,0.35);text-decoration:none;border-bottom:1px solid rgba(245,240,232,0.1)">Winter Wheat</a>
       &nbsp;&middot;&nbsp;
@@ -769,4 +862,46 @@ tbody tr:hover{background:rgba(181,84,27,0.03)}
   // Opt in: hide elements so observer can reveal them
   document.documentElement.classList.add('rv-ready');
   var ro = new IntersectionObserver(function(es) {
-    es.for
+    es.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('v'); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.rv').forEach(function(el) { ro.observe(el); });
+})();
+
+// Parallax hero
+var heroImg = document.getElementById('heroImg');
+var heroSection = document.getElementById('hero');
+var ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      var scrolled = window.scrollY;
+      var heroH = heroSection.offsetHeight;
+      if (scrolled < heroH) {
+        heroImg.style.transform = 'translateY(' + (scrolled * 0.35) + 'px)';
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// Nav
+var nav = document.getElementById('mainNav');
+var hh = window.innerHeight * 0.7;
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('v', window.scrollY > hh);
+}, { passive: true });
+
+// Smooth scroll
+document.querySelectorAll('.nav-l a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
